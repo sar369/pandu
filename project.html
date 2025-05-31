@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Website</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        video {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            transform: translateX(-50%) translateY(-50%);
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            text-align: center;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .block {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            width: 45%; /* Adjust width to ensure both blocks fit side by side */
+            box-sizing: border-box;
+        }
+        .block h2 {
+            margin-top: 0;
+        }
+        .qr-code img {
+            width: 100px; /* Set a fixed width for the QR codes */
+            height: 100px; /* Set a fixed height for the QR codes */
+            margin: 20px 0;
+        }
+        .pay-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        @media (max-width: 768px) {
+            video {
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                transform: none;
+            }
+            .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .block {
+                width: 90%;
+                margin: 10px auto;
+            }
+            .qr-code img {
+                width: 80px; /* Adjust QR code size for smaller screens */
+                height: 80px; /* Adjust QR code size for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop>
+        <source src="/home/default/Downloads/game.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="container">
+        <div class="block">
+            <h2>Game Type: Classic</h2>
+            <div class="qr-code">
+                <!-- Insert your first QR code image here -->
+                <img src="/home/default/Downloads/qr-code.png" alt="QR Code 1">
+            </div>
+            <a href="#" class="pay-button">Pay</a>
+        </div>
+        <div class="block">
+            <h2>Game Type: Even</h2>
+            <div class="qr-code">
+                <!-- Insert your second QR code image here -->
+                <img src="qr-code-2.png" alt="QR Code 2">
+            </div>
+            <a href="#" class="pay-button">Pay</a>
+        </div>
+    </div>
+</body>
+</html>
