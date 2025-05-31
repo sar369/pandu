@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Dominators</title>
+    <title>QR Code Website</title>
     <style>
         body, html {
             margin: 0;
@@ -13,14 +13,12 @@
         }
         video {
             position: fixed;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             z-index: -100;
-            transform: translateX(-50%) translateY(-50%);
         }
         .container {
             display: flex;
@@ -56,13 +54,6 @@
             border-radius: 5px;
         }
         @media (max-width: 768px) {
-            video {
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                transform: none;
-            }
             .container {
                 flex-direction: column;
                 align-items: flex-start;
@@ -88,7 +79,7 @@
             <h2>Game Type: Classic</h2>
             <div class="qr-code">
                 <!-- Insert your first QR code image here -->
-                <img src="/home/default/Downloads/qr-code.png" alt="QR Code 1">
+                <img src="qr-code-1.png" alt="QR Code 1">
             </div>
             <a href="#" class="pay-button">Pay</a>
         </div>
