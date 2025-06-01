@@ -62,16 +62,17 @@
         .team-dominators {
             position: absolute;
             top: 10px;
-            left: 10px;
+            left: -100%; /* Start from the left outside of the viewport */
             font-size: 24px;
             color: #ff6600; /* Initial color */
             background: linear-gradient(45deg, #ff0000, #ffa500, #ffff00, #008000, #0000ff, #4b0082, #ee82ee);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: colorChange 5s linear infinite;
+            animation: moveAndColorChange 10s linear infinite;
         }
-        @keyframes colorChange {
+        @keyframes moveAndColorChange {
             0% {
+                left: -100%;
                 color: #ff0000;
             }
             20% {
@@ -87,6 +88,7 @@
                 color: #0000ff;
             }
             100% {
+                left: 100%;
                 color: #4b0082;
             }
         }
