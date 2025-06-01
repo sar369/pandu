@@ -36,14 +36,17 @@
             border-radius: 10px;
             width: 45%; /* Adjust width to ensure both blocks fit side by side */
             box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        .block h2 {
-            margin-top: 0;
+        .block h3, .block h4, .block p {
+            margin: 5px 0; /* Reduced margin for less space between lines */
         }
         .qr-code img {
             width: 100px; /* Set a fixed width for the QR codes */
             height: 100px; /* Set a fixed height for the QR codes */
-            margin: 20px 0;
+            margin: 10px 0; /* Reduced margin for less space */
         }
         .pay-button {
             display: inline-block;
@@ -52,6 +55,7 @@
             color: white;
             text-decoration: none;
             border-radius: 5px;
+            margin-top: 10px; /* Adjust this value to move the pay button up or down */
         }
         @media (max-width: 768px) {
             .container {
@@ -63,7 +67,6 @@
                 margin: 10px auto;
             }
             .qr-code img {
-                color: yellow;
                 width: 90px; /* Adjust QR code size for smaller screens */
                 height: 90px; /* Adjust QR code size for smaller screens */
             }
@@ -84,10 +87,10 @@
                 <!-- Insert your first QR code image here -->
                 <img src="/pandu/white.jpg" alt="QR Code 1">
             </div>
-            <a href="phonepe://pay?pa=8639532492@fam&am=10&cu=INR" class="pay-button">Pay</a>
+            <a href="phonepe://pay?pa=8639532492@fam&am=100&cu=INR" class="pay-button">Pay</a>
         </div>
         <div class="block">
-            <h3>Game Type: Bermuda-full-map</h2>
+            <h3>Game Type: Bermuda-full-map</h3>
             <h4>Note: 4 vs 4</h4>
             <p>30Rs</p>
             <div class="qr-code">
