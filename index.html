@@ -10,7 +10,8 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: hidden;
+            overflow-x: hidden;
+            font-family: 'Arial', sans-serif;
         }
         video {
             position: fixed;
@@ -22,32 +23,51 @@
             z-index: -100;
         }
         .container {
+            position: relative;
+            z-index: 1;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
             height: 100%;
-            text-align: center;
             color: white;
-            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        header, footer {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 0;
+            text-align: center;
+        }
+        header h1, footer p {
+            margin: 0;
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            box-sizing: border-box;
+            width: 100%;
+            max-width: 1200px;
         }
         .block {
             background: rgba(0, 0, 0, 0.5);
             padding: 20px;
-            margin: 10px;
             border-radius: 10px;
-            width: 45%; /* Adjust width to ensure both blocks fit side by side */
+            width: 300px;
             box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            text-align: left;
         }
         .block h3, .block h4, .block p {
-            margin: 5px 0; /* Reduced margin for less space between lines */
+            margin: 5px 0;
         }
         .qr-code img {
-            width: 100px; /* Set a fixed width for the QR codes */
-            height: 100px; /* Set a fixed height for the QR codes */
-            margin: 10px 0; /* Reduced margin for less space */
+            width: 100px;
+            height: 100px;
+            margin: 10px 0;
         }
         .pay-button {
             display: inline-block;
@@ -56,20 +76,22 @@
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            margin-top: 10px; /* Adjust this value to move the pay button up or down */
+            margin-top: 10px;
+        }
+        .pay-button:hover {
+            background-color: #45a049;
         }
         @media (max-width: 768px) {
-            .container {
+            .content {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
             }
             .block {
                 width: 90%;
-                margin: 10px auto;
             }
             .qr-code img {
-                width: 90px; /* Adjust QR code size for smaller screens */
-                height: 90px; /* Adjust QR code size for smaller screens */
+                width: 90px;
+                height: 90px;
             }
         }
     </style>
@@ -80,26 +102,32 @@
         Your browser does not support the video tag.
     </video>
     <div class="container">
-        <div class="block">
-            <h3>Game Type: Clash-squad</h3>
-            <p>#Note: 4 vs 4</p>
-            <h4>Amount: 100rs</h4>
-            <div class="qr-code">
-                <!-- Insert your first QR code image here -->
-                <img src="/pandu/white.jpg" alt="QR Code 1">
+        <header>
+            <h1>Team Dominators</h1>
+        </header>
+        <div class="content">
+            <div class="block">
+                <h3>Game Type: Clash-squad</h3>
+                <p>#Note: 4 vs 4</p>
+                <h4>Amount: 100rs</h4>
+                <div class="qr-code">
+                    <img src="/pandu/white.jpg" alt="QR Code 1">
+                </div>
+                <a href="phonepe://pay?pa=8639532492@fam&am=100&cu=INR" class="pay-button">Pay</a>
             </div>
-            <a href="phonepe://pay?pa=8639532492@fam&am=100&cu=INR" class="pay-button">Pay</a>
-        </div>
-        <div class="block">
-            <h3>Game Type: Bermuda-full-map</h3>
-            <p>#Note: 12 slots</p>
-            <h4>Amount: 100rs</h4>
-            <div class="qr-code">
-                <!-- Insert your second QR code image here -->
-                <img src="/pandu/black.jpg" alt="QR Code 2">
+            <div class="block">
+                <h3>Game Type: Bermuda-full-map</h3>
+                <p>#Note: 12 slots</p>
+                <h4>Amount: 100rs</h4>
+                <div class="qr-code">
+                    <img src="/pandu/black.jpg" alt="QR Code 2">
+                </div>
+                <a href="phonepe://pay?pa=8639532492@fam&am=100&cu=INR" class="pay-button">Pay</a>
             </div>
-            <a href="phonepe://pay?pa=8639532492@fam&am=100&cu=INR" class="pay-button">Pay</a>
         </div>
+        <footer>
+            <p>&copy; 2023 Team Dominators. All rights reserved.</p>
+        </footer>
     </div>
 </body>
 </html>
