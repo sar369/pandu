@@ -29,7 +29,6 @@
             text-align: center;
             color: white;
             font-family: Arial, sans-serif;
-            position: relative;
         }
         .block {
             background: rgba(0, 0, 0, 0.5);
@@ -59,39 +58,6 @@
             border-radius: 5px;
             margin-top: 10px; /* Adjust this value to move the pay button up or down */
         }
-        .team-dominators {
-            position: absolute;
-            top: 10px;
-            left: -100%; /* Start from the left outside of the viewport */
-            font-size: 24px;
-            color: #ff6600; /* Initial color */
-            background: linear-gradient(45deg, #ff0000, #ffa500, #ffff00, #008000, #0000ff, #4b0082, #ee82ee);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: moveAndColorChange 10s linear infinite;
-        }
-        @keyframes moveAndColorChange {
-            0% {
-                left: -100%;
-                color: #ff0000;
-            }
-            20% {
-                color: #ffa500;
-            }
-            40% {
-                color: #ffff00;
-            }
-            60% {
-                color: #008000;
-            }
-            80% {
-                color: #0000ff;
-            }
-            100% {
-                left: 100%;
-                color: #4b0082;
-            }
-        }
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
@@ -104,9 +70,6 @@
             .qr-code img {
                 width: 90px; /* Adjust QR code size for smaller screens */
                 height: 90px; /* Adjust QR code size for smaller screens */
-            }
-            .team-dominators {
-                display: none;
             }
         }
     </style>
@@ -137,7 +100,6 @@
             </div>
             <a href="phonepe://pay?pa=8639532492@fam&am=100&cu=INR" class="pay-button">Pay</a>
         </div>
-        <span class="team-dominators">Team Dominators</span>
     </div>
 </body>
 </html>
